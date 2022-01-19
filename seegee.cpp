@@ -104,6 +104,8 @@ namespace SeeGee {
 	}
 
 	// GRAPHICS METHODS
+	void draw() { glfwSwapBuffers(window); }
+
 	void clear(vec3 color) {
 		glClearColor(color.x, color.y, color.z, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -150,6 +152,7 @@ namespace SeeGee {
 	}
 
 	// INPUTS METHODS
+	void pollEvents() { glfwPollEvents(); }
 	int shouldClose() { return glfwWindowShouldClose(window); }
 	int getKey(int key) { return glfwGetKey(window, key); }
 }

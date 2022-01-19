@@ -158,12 +158,15 @@ namespace SeeGee {
 	extern void close();
 
 	// Graphics
+	extern void draw();
+
 	extern void clear(vec3 color);
 
 	extern void line(vec2 start, vec2 end);
 	extern void line(vec2 start, vec2 end, vec3 color);
 
 	// Inputs
+	extern void pollEvents();
 	extern int shouldClose();
 	extern int getKey(int key);
 }
