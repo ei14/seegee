@@ -45,7 +45,8 @@ namespace SeeGee {
 			fprintf(stderr, "%s\n", &errMsg[0]);
 		}
 	}
-
+	
+	// GENERAL METHODS
 	void open(int width, int height, const char *title) {
 		glewExperimental = true;
 		if(!glfwInit()) {
@@ -102,6 +103,7 @@ namespace SeeGee {
 		glfwDestroyWindow(window);
 	}
 
+	// GRAPHICS METHODS
 	void clear(vec3 color) {
 		glClearColor(color.x, color.y, color.z, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -146,4 +148,8 @@ namespace SeeGee {
 		glDeleteBuffers(1, &vbo);
 		glDeleteVertexArrays(1, &vao);
 	}
+
+	// INPUTS METHODS
+	int shouldClose() { return glfwWindowShouldClose(window); }
+	int getKey(int key) { return glfwGetKey(window, key); }
 }

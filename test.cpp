@@ -7,10 +7,7 @@ int main() {
 
 	open(500, 500, "SeeGee Test");
 
-	while(glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS
-		&& glfwGetKey(window, GLFW_KEY_Q) != GLFW_PRESS
-		&& glfwWindowShouldClose(window) == 0
-	) {
+	while(!getKey(KEY_ESCAPE) && !getKey(KEY_Q) && !shouldClose()) {
 		clear(black);
 		line(vec2(0, 0), vec2(0, 500), white);
 		line(vec2(0, 500), vec2(500, 500), white);
